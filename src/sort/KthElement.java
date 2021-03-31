@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.PriorityQueue;
+
 /**
  * Created by wangshuyang on 2021-3-30.
  *
@@ -70,6 +72,26 @@ public class KthElement {
         int temp = nums[j];
         nums[j] = nums[i];
         nums[i] = temp;
+    }
+
+    /**
+     * 最小堆寻找第K大的元素
+     * @param nums
+     * @param k
+     * @return
+     */
+    private int heapPick(int[] nums, int k) {
+        int target = nums.length - k;
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        for (int num : nums) {
+            priorityQueue.add(num);
+            // 当队列中的元素大于k个的时候，队列中最小的元素被弹出，队列中始终存的最大k个元素
+            if (priorityQueue.size() > k) {
+                priorityQueue.poll();
+            }
+        }
+        // 将队列中k个元素里面最小的那个取出来就是第k个最大的
+        return priorityQueue.peek();
     }
 
     public static void main(String[] args) {
