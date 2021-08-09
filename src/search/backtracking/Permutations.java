@@ -2,6 +2,7 @@ package search.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.BlockingDeque;
 
 /**
  * Created by wangshuyang on 2021-8-6.
@@ -12,6 +13,8 @@ public class Permutations {
         List<Integer> combination = new ArrayList<>();
         int[] visiteds = new int[nums.length];
         dfs(combinations, combination, nums, visiteds);
+
+        BlockingDeque blockingDeque;
         return combinations;
     }
 
