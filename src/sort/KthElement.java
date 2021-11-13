@@ -33,7 +33,7 @@ public class KthElement {
      * @return
      */
     private int quickPick(int[] nums, int k) {
-        // 这里是寻找第K个最大的元素，这里转换成第K个最大的元素在从小到大排序的数组中的下标
+        // 这里是寻找第K个最大的元素，这里转换成第K个 最大的元素在从小到大排序的数组中的下标
         int target = nums.length - k;
         int start = 0;
         int end = nums.length - 1;
