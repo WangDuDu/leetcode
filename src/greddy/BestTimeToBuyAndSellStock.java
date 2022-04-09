@@ -2,6 +2,7 @@ package greddy;
 
 /**
  * Created by wangshuyang on 2021-7-24.
+ * 股票买卖问题，只允许买卖一次
  */
 public class BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {
