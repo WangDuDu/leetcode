@@ -101,8 +101,8 @@ public class BestTimeToBuyAndSellStockIv {
     public static void main(String[] args) {
 
         Solution solution = new BestTimeToBuyAndSellStockIv().new Solution();
-        System.out.println(solution.maxProfit(2, new int[]{2,4,1}));
-        System.out.println(solution.maxProfit(2, new int[]{3,2,6,5,0,3}));
+        System.out.println(solution.maxProfit2(2, new int[]{2,4,1}));
+        System.out.println(solution.maxProfit2(2, new int[]{3,2,6,5,0,3}));
     }
 
     class Solution {
@@ -132,6 +132,58 @@ public class BestTimeToBuyAndSellStockIv {
             }
             return dp[k][days - 1];
         }
+
+
+        /**
+         * 我们将买入记为一次交易
+         * (1)确定动态规划数组：dp[i][j][k]
+         *      i:表示当前是第几天
+         *      j:表示是否持有股票，0表示在第i天没有持有股票，1表示在第i天持有股票
+         *      k:表示在第i天一共交易了k次
+         * (2)确定状态转移方程：dp[i][j][k]
+         *      1、今天持有股票：dp[i][1][k] = max(dp[i - 1][1][k], dp[i - 1][0][k - 1] - prices[i])
+         *          a、昨天没有持有股票，那么今天进行了买入操作，当天持有的利润为dp[i - 1][0][k - 1] - prices[i]
+         *          b、昨天持有股票，那么今天没有进行任何操作，当天持有的利润为前一天的利润dp[i - 1][1][k]
+         *      2、今天没有持有股票：dp[i][0][k] = max(dp[i - 1][0][k], dp[i - 1][1][k] + prices[i])
+         *          a、昨天没有持有股票，那么今天没有进行任何操作，今天持有的利润为前一天没有持有股票的利润dp[i - 1][0][k]
+         *          b、昨天持有股票，那么今天进行了卖出操作，今天持有的利润为dp[i - 1][1][k] + prices[i]
+         * (3)初试化：根据状态转移方程，今天的做大利润跟昨天交易k次，k-1次的做大利润有关，我们需要初始化的值有以下几个
+         *      1、dp[0][0][0] = 0
+         *      2、dp[0][1][1] = -prices[0]
+         * (4)优化：买卖如果是在同一天进行了，实际上等于浪费了一次交易机会，是没有意义的，每一笔交易都是在两天进行的话，实际上k的最大值只能是总天数的一半
+         *         并且是向下取整，向上取整的话多一个买入操作没有卖出肯定是不值得的
+         *
+         */
+        public int maxProfit2(int k, int[] prices) {
+
+            int days = prices.length;
+            if (days == 1 || days == 0) {
+                return 0;
+            }
+
+            k = Math.min(k, days / 2);
+
+            int[][][] dp = new int[days][2][k + 1];
+
+            for (int i = 0; i <= k; i++) {
+                // 第0天没有持有股票，那么不管进行多少次交易，说明这些交易都是买+卖在第0天
+                dp[0][0][i] = 0;
+                // 第0天持有股票，那么不管进行多少次交易，这些交易都是卖+买和一次单独买的交易。
+                // 这里面有个特殊的dp[0][1][0]表示第0天持有股票但是交易次数是0，是不可能发生的，后边实际也不会用到它
+                dp[0][1][i] = -prices[0];
+            }
+
+
+            for (int i = 1; i < days; i++) {
+                for (int n = 1; n <= k; n++) {
+                    dp[i][1][n] = Integer.max(dp[i - 1][1][n], dp[i - 1][0][n - 1] - prices[i]);
+                    dp[i][0][n] = Integer.max(dp[i - 1][0][n], dp[i - 1][1][n] + prices[i]);
+                }
+            }
+            return dp[days - 1][0][k];
+        }
     }
+
+
 
 }
