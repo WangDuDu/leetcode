@@ -1,4 +1,4 @@
-package recursion;
+package recursion.longestSubsequence;
 
 import javafx.util.Pair;
 
