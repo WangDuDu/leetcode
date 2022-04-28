@@ -1,4 +1,4 @@
-package recursion;
+package recursion.longestSubsequence;
 
 import java.util.Arrays;
 

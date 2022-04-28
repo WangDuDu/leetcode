@@ -1,6 +1,4 @@
-package recursion;
-
-import java.util.Arrays;
+package recursion.longestSubsequence;
 
 public class LongestIncreasingSubsequence {
     public int lengthOfLIS(int[] nums) {
