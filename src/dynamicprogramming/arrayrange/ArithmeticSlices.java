@@ -1,4 +1,4 @@
-package recursion.arrayrange;
+package dynamicprogramming.arrayrange;
 
 /**
  * Created by wangshuyang on 2021-8-13.

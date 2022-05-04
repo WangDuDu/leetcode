@@ -1,4 +1,4 @@
-package recursion.integerbreak;
+package dynamicprogramming.integerbreak;
 
 public class IntegerBreak {
     public int integerBreak(int n) {

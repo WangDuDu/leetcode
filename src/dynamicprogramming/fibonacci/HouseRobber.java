@@ -1,4 +1,4 @@
-package recursion.fibonacci;
+package dynamicprogramming.fibonacci;
 
 /**
  * 198.打家劫舍

@@ -1,4 +1,4 @@
-package recursion.fibonacci;
+package dynamicprogramming.fibonacci;
 
 /**
  * Created by wangshuyang on 2021-8-8.

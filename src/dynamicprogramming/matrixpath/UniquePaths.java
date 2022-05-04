@@ -1,4 +1,4 @@
-package recursion.matrixpath;
+package dynamicprogramming.matrixpath;
 
 /**
  * Created by wangshuyang on 2021-8-12.

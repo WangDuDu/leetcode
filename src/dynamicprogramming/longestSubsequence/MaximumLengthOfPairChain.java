@@ -1,4 +1,4 @@
-package recursion.longestSubsequence;
+package dynamicprogramming.longestSubsequence;
 
 import javafx.util.Pair;
 

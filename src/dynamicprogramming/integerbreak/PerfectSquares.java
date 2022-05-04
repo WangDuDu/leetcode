@@ -1,4 +1,4 @@
-package recursion.integerbreak;
+package dynamicprogramming.integerbreak;
 
 public class PerfectSquares {
     public int numSquares(int n) {

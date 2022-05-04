@@ -1,4 +1,4 @@
-package recursion.longestSubsequence;
+package dynamicprogramming.longestSubsequence;
 
 public class LongestIncreasingSubsequence {
     public int lengthOfLIS(int[] nums) {
