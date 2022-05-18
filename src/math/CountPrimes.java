@@ -52,7 +52,8 @@ public class CountPrimes {
          */
         public int countPrimes(int n) {
 
-            boolean[] notPrimes = new boolean[n + 1];
+            // 题目是n以内不包括n，所以只要1~n-1
+            boolean[] notPrimes = new boolean[n];
             int count = 0;
             for (int i = 2; i < n; i++) {
                 if (notPrimes[i]) {
