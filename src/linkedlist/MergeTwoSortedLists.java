@@ -37,8 +37,6 @@ package linkedlist;
 // Related Topics 递归 链表 👍 2471 👎 0
 
 
-import leetcode.editor.cn.ListNode;
-
 public class MergeTwoSortedLists {
     public static void main(String[] args) {
         Solution solution = new MergeTwoSortedLists().new Solution();
@@ -62,7 +60,7 @@ public class MergeTwoSortedLists {
          * @param list2
          * @return
          */
-        public leetcode.editor.cn.ListNode mergeTwoLists(leetcode.editor.cn.ListNode list1, leetcode.editor.cn.ListNode list2) {
+        public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
             if (list1 == null) {
                 return list2;
             }
@@ -85,9 +83,9 @@ public class MergeTwoSortedLists {
          * @param list2
          * @return
          */
-        public leetcode.editor.cn.ListNode mergeTwoLists2(leetcode.editor.cn.ListNode list1, leetcode.editor.cn.ListNode list2) {
+        public ListNode mergeTwoLists2(ListNode list1, ListNode list2) {
             // preHead和prev都指向了同一个ListNode对象，val = 1, next = null
-            leetcode.editor.cn.ListNode preHead = new leetcode.editor.cn.ListNode(-1);
+            ListNode preHead = new ListNode(-1);
             ListNode prev = preHead;
             while (list1 != null && list2 != null) {
                 // 在第一次循环的时候prev和preHead的next都指向了合并后链表的头节点，也就是两个链表的头结点中比较小的那一个
