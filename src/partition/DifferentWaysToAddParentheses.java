@@ -1,7 +1,5 @@
 package partition;
 
-import javafx.scene.input.DataFormat;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +8,6 @@ import java.util.List;
  */
 public class DifferentWaysToAddParentheses {
 
-    static final ThreadLocal<DataFormat> t = new ThreadLocal<DataFormat>() {
-
-    };
 
     public List<Integer> diffWaysToCompute(String expression) {
         // 存储expression可能得到的结果

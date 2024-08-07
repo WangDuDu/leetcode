@@ -1,6 +1,6 @@
 package search.bfs;
 
-import javafx.util.Pair;
+import base.Pair;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -30,8 +30,8 @@ public class ShortestPathInBinaryMatrix {
             while (size-- > 0) {
                 // 首先拿到遍历到的当前节点的坐标(cx,cy)
                 Pair<Integer, Integer> cur = queue.poll();
-                Integer cx = cur.getKey();
-                Integer cy = cur.getValue();
+                Integer cx = cur.getLeft();
+                Integer cy = cur.getRight();
                 // 节点如果不可达的话直接遍历栈中的下一个节点
                 if (grid[cx][cy] == 1) {
                     continue;
@@ -53,5 +53,4 @@ public class ShortestPathInBinaryMatrix {
         }
         return -1;
     }
-
 }

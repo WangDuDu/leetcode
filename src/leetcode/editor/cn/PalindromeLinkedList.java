@@ -32,9 +32,6 @@ package leetcode.editor.cn;
 // 进阶：你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？ 
 // Related Topics 栈 递归 链表 双指针 👍 1417 👎 0
 
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 public class PalindromeLinkedList {
     public static void main(String[] args) {
         Solution solution = new PalindromeLinkedList().new Solution();

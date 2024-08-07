@@ -1,7 +1,5 @@
 package dynamicprogramming.longestSubsequence;
 
-import javafx.util.Pair;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,5 +55,30 @@ public class MaximumLengthOfPairChain {
         return res.size();
     }
 
+    static class Pair {
+        private int left;
+        private int right;
+
+        public int getLeft() {
+            return left;
+        }
+
+        public void setLeft(int left) {
+            this.left = left;
+        }
+
+        public int getRight() {
+            return right;
+        }
+
+        public void setRight(int right) {
+            this.right = right;
+        }
+
+        public Pair(int left, int right) {
+            this.left = left;
+            this.right = right;
+        }
+    }
 
 }
