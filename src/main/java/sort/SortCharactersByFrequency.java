@@ -46,6 +46,6 @@ public class SortCharactersByFrequency {
     }
 
     public static void main(String[] args) {
-        System.out.println(frequencySort("tree"));
+        System.out.println(frequencySort("binarytree"));
     }
 }
